@@ -37,8 +37,8 @@ bool single_display_mode_initialization()
     if (!lv_win32_init(
         GetModuleHandleW(NULL),
         SW_SHOW,
-        800,
-        480,
+        1024,//800,
+        1920,//480,
         LoadIconW(GetModuleHandleW(NULL), MAKEINTRESOURCE(IDI_LVGL))))
     {
         return false;
@@ -58,8 +58,8 @@ int main()
         return -1;
     }
 
-    //lv_demo_widgets();
-    lv_demo_benchmark(LV_DEMO_BENCHMARK_MODE_RENDER_AND_DRIVER);
+    lv_demo_widgets();
+    //lv_demo_benchmark(LV_DEMO_BENCHMARK_MODE_RENDER_AND_DRIVER);
 
     while (!lv_win32_quit_signal)
     {
